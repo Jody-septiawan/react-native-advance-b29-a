@@ -26,7 +26,7 @@ export default function ListSoc({ navigation }) {
       renderItem={({item}) => (
           <Pressable onPress={() => handlePress(item)}>
             <Text 
-                fontFamily={body}
+                fontFamily="body"
                 fontWeight={400}
                 fontStyle="italic"
                 fontSize={30}
@@ -35,7 +35,8 @@ export default function ListSoc({ navigation }) {
                 {item}
             </Text>
           </Pressable>
-      )} />
+      )} 
+      keyExtractor={(item)=> item}/>
     </Box>
   );
 }

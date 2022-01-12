@@ -17,6 +17,8 @@ const Tab = createBottomTabNavigator()
 import FormNativeBase from './src/screens/form'
 import Hello from './src/screens/hello'
 import IncDec from './src/screens/incDec'
+import ListSoc from './src/screens/listSoc'
+import DetailSoc from './src/screens/detailSoc'
 
 function MyTab() {
     const theme = useTheme()
@@ -34,6 +36,8 @@ function MyTab() {
                         iconName = focused ? "ios-home" : "ios-home-outline"
                     } else if (route.name == "Form") {
                         iconName = focused ? "ios-information-circle" : "ios-information-circle-outline"
+                    } else if (route.name == "Social Media") {
+                        iconName = focused ? "ios-list-circle" : "ios-list-circle-outline"
                     }
 
                     return <Ionicons name={iconName} size={size} color={color} />
@@ -44,6 +48,7 @@ function MyTab() {
         >
             <Tab.Screen name="Hello" component={Hello} />
             <Tab.Screen name="Form" component={FormNativeBase} />
+            <Tab.Screen name="Social Media" component={ListSoc} />
         </Tab.Navigator>
     )
 }
@@ -62,6 +67,10 @@ export default function Container(){
                 <Stack.Screen 
                     name='IncDec'
                     component={IncDec} 
+                />
+                <Stack.Screen 
+                    name='Detail Social'
+                    component={DetailSoc} 
                 />
             </Stack.Navigator>
         </NavigationContainer>
